@@ -4,15 +4,15 @@ app = Flask(__name__, template_folder='template')
 tasks = [
     {
         'id': 1,
-        'title': u'Study',
-        'description': u'Science',
-        'done': False
+        'done': false,
+        'contact': u'9898989898',
+        'name': u"Raju"
     },
     {
-        'id': 2,
-        'title': u'Code',
-        'description': u'Need to code!',
-        'done': False
+         'id': 2,
+        'done': false,
+        'contact': u'9898989898',
+        'name': u"Rajesh"
     }
 ]
 
@@ -27,8 +27,8 @@ def add_task():
 
     task = {
         'id': tasks[-1]['id'] + 1,
-        'title': request.json['title'],
-        'description': request.json.get('description', ""),
+        'name': request.json['name'],
+        'contact': request.json.get('contact', ""),
         'done': False
     }
     tasks.append(task)
